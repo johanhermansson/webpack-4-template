@@ -1,0 +1,43 @@
+{
+  "name": "webpack-4-template",
+  "version": "1.0.0",
+  "main": "webpack.config.js",
+  "license": "GPL-3.0-or-later",
+  "dependencies": {},
+  "devDependencies": {
+    "autoprefixer": "^8.6.4",
+    "babel-core": "^6.26.3",
+    "babel-loader": "^7.1.4",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-react": "^6.24.1",
+    "css-loader": "^0.28.11",
+    "cssnano": "^3.10.0",
+    "mini-css-extract-plugin": "^0.4.1",
+    "node-sass": "^4.9.0",
+    "postcss-flexbugs-fixes": "^3.3.1",
+    "postcss-import": "^11.1.0",
+    "postcss-loader": "^2.1.5",
+    "postcss-preset-env": "^5.2.1",
+    "postcss-scss": "^1.0.6",
+    "sass-loader": "^7.0.3",
+    "style-loader": "^0.21.0",
+    "svg-spritemap-webpack-plugin": "^2.6.0",
+    "webpack": "^4.14.0",
+    "webpack-assets-manifest": "^3.0.1",
+    "webpack-build-notifier": "^0.1.28",
+    "webpack-cli": "^3.0.8"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "NODE_ENV=development webpack -d --watch",
+    "watch": "NODE_ENV=development webpack -d --watch",
+    "dev": "NODE_ENV=development webpack -p --progress --colors --optimize-minimize",
+    "dist": "NODE_ENV=production webpack -p --progress --colors --optimize-minimize",
+    "build": "npm run dist"
+  },
+  "browserslist": [
+    "last 2 versions",
+    "> 5%",
+    "IE 11"
+  ]
+}
