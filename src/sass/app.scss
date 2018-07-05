@@ -1,0 +1,7 @@
+.component {
+	background: green;
+
+	&--loaded {
+		background: red;
+	}
+}
