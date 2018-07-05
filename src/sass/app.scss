@@ -1,7 +1,12 @@
+:root {
+	--green: #0f0;
+	--red: #f00;
+}
+
 .component {
-	background: green;
+	background: var( --red );
 
 	&--loaded {
-		background: red;
+		background: var( --green );
 	}
 }
