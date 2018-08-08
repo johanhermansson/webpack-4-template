@@ -14,7 +14,8 @@ const srcDir       = 'src';
 const jsEntry      = srcDir + '/js/app';
 const svgDir       = srcDir + '/svg';
 const manifestPath = path.resolve( __dirname, distDir + '/manifest.json' );
-const oldManifest  = fs.existsSync( manifestPath ) ? JSON.parse( fs.readFileSync( manifestPath, 'utf8' ) ) : {};
+
+let oldManifest    = fs.existsSync( manifestPath ) ? JSON.parse( fs.readFileSync( manifestPath, 'utf8' ) ) : {};
 
 module.exports = {
 	context: __dirname,
@@ -43,9 +44,11 @@ module.exports = {
 				Object.keys( oldManifest ).forEach( key => {
 					const oldFile = path.resolve( __dirname, distDir + '/' + oldManifest[ key ] );
 					if ( newManifest[ key ] !== oldManifest[ key ] && fs.existsSync( oldFile ) ) {
-						fs.unlink( oldFile, () => {} );
+						fs.unlinkSync( oldFile, () => {} );
 					}
 				} );
+				// Replace old manifest
+				oldManifest = Object.assign( {}, newManifest );
 			}
 		} ),
 		new BuildNotifierPlugin( {
