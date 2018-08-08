@@ -1,6 +1,6 @@
 {
   "name": "webpack-4-template",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "main": "webpack.config.js",
   "license": "GPL-3.0-or-later",
   "dependencies": {},
